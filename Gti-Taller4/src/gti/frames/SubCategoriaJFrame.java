@@ -18,7 +18,7 @@ public class SubCategoriaJFrame extends JFrame {
 	private TodoCategoria todo = null;
 	static SubCategoriaJFrame myFrame;
 	JPanel mainPanel;
-	private int idCategoria;
+	private static int idCategoria;
 
 	public SubCategoriaJFrame() {
 		super("SubCategoria");
@@ -27,8 +27,9 @@ public class SubCategoriaJFrame extends JFrame {
 	public SubCategoriaJFrame(int id) {
 
 		super("SubCategoria");
+		System.out.println("id:" + id);
 		this.idCategoria = id;
-			createAndShowGUI();
+		createAndShowGUI();
 	}
 
 	private static void createAndShowGUI() {
@@ -40,8 +41,10 @@ public class SubCategoriaJFrame extends JFrame {
 	}
 
 	private void prepareUI() {
+		System.out.println("idCategoria:" + idCategoria);
 		todo = TodoCategoria.getInstancia();
 		todo.getCategoria();
+
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 

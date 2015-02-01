@@ -29,8 +29,6 @@ public class Informacion {
 		return categoria;
 	}
 
-	// TODO: Terminar de "Harcodear" los datos de las subcategorias y probar
-	// que no muera los JFrames
 	private Subcategoria[] cargarSubCa(int id) {
 		Subcategoria[] subCa = null;
 		switch (id) {
@@ -45,7 +43,6 @@ public class Informacion {
 			break;
 		case 1:
 			subCa = new Subcategoria[4];
-			subCa = new Subcategoria[3];
 			subCa[0] = new Subcategoria(0, "Aplicacion del cambio empresarial",
 					null);
 			subCa[1] = new Subcategoria(1, "Gestion del cambio emmpresarial",
@@ -81,19 +78,18 @@ public class Informacion {
 		}
 		return subCa;
 	}
-	
-	// TODO: Terminar de "Harcodear" los datos de las subcategorias y probar
-		// que no muera los JFrames
-		private Habilidad[] cargarHabildades(int id) {
-			Habilidad[] habil = null;
-			switch (id) {
-			case 0:
-				
-				break;
 
-			default:
-				break;
-			}
-			return habil;
+	// TODO: Terminar de "Harcodear" los datos de las habilidades
+	private Habilidad[] cargarHabildades(int id) {
+		Habilidad[] habil = null;
+		switch (id) {
+		case 0:
+
+			break;
+
+		default:
+			break;
 		}
+		return habil;
+	}
 }

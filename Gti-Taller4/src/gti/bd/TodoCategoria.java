@@ -18,6 +18,7 @@ public class TodoCategoria {
 		if (instancia == null) {
 			instancia = new TodoCategoria();
 			instancia.datos = new Informacion();
+			
 			instancia.categoria = instancia.datos.cargarTodo();
 		}
 		return instancia;

@@ -79,6 +79,7 @@ public class InicioJFrame extends JFrame {
             	btnCompletar.addActionListener(new ActionListener(){
 
             		public void actionPerformed(ActionEvent e) {
+            			System.out.println("idCategoria:"+itemCategoria.getId());
             			new SubCategoriaJFrame(itemCategoria.getId());
             		}
             	});

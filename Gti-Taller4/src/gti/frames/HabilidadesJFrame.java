@@ -1,11 +1,12 @@
 package gti.frames;
 
-import gti.bd.TodoCategoria;
-import gti.bean.Subcategoria;
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import gti.bd.TodoCategoria;
+import gti.bean.Habilidad;
+import gti.bean.Subcategoria;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -13,45 +14,43 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
-public class SubCategoriaJFrame extends JFrame {
+public class HabilidadesJFrame extends JFrame {
 	private TodoCategoria todo = null;
-	Subcategoria[] subCategoria = null;
-	static SubCategoriaJFrame myFrame;
+	Habilidad[] habilidad = null;
+	static HabilidadesJFrame myFrame;
 	JPanel mainPanel;
-	private static int idCategoria;
+	private static int idHabilidades,idCategoria;
 
-	public SubCategoriaJFrame() {
-		super("SubCategoria");
+	public HabilidadesJFrame() {
+		super("HabilidadesJFrame");
 	}
 
-	public SubCategoriaJFrame(int id) {
+	public HabilidadesJFrame(int idCategoria, int id) {
 
-		super("SubCategoria");
+		super("HabilidadesJFrame");
 		System.out.println("id:" + id);
-		this.idCategoria = id;
+		this.idHabilidades = id;
+		this.idCategoria=idCategoria;
 		createAndShowGUI();
 	}
 
 	private static void createAndShowGUI() {
 
-		myFrame = new SubCategoriaJFrame();
+		myFrame = new HabilidadesJFrame();
 		myFrame.prepareUI();
 		myFrame.pack();
 		myFrame.setVisible(true);
 	}
 
 	private void prepareUI() {
-		System.out.println("idCategoria:" + idCategoria);
 		todo = TodoCategoria.getInstancia();
-
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-
-		subCategoria = todo.getCategoria().get(idCategoria)
-				.getSubcategoria();
-		for (Subcategoria itemSubCategoria : subCategoria) {
-			mainPanel.add(new subCategoriaPanel(itemSubCategoria));
+		
+		habilidad = todo.getCategoria().get(idCategoria)
+				.getSubcategoria()[idHabilidades].getHabilidades();
+		for (Habilidad itemHabilidad : habilidad) {
+			mainPanel.add(new habilidadesPanel(itemHabilidad));
 			myFrame.pack();
 		}
 
@@ -66,21 +65,17 @@ public class SubCategoriaJFrame extends JFrame {
 		getContentPane().add(mainPanel, BorderLayout.PAGE_START);
 		getContentPane().add(btnSubCompletar, BorderLayout.PAGE_END);
 	}
+	
+	private class habilidadesPanel extends JPanel {
 
-	@SuppressWarnings("serial")
-	private class subCategoriaPanel extends JPanel {
-
-		public subCategoriaPanel(final Subcategoria itemSubCategoria) {
+		public habilidadesPanel(final Habilidad itemHabilidad) {
 			super();
-			JLabel myLabel = new JLabel(itemSubCategoria.getNombreSub());
-			JButton btnSubCompletarHabil = new JButton("Completar");
+			JLabel myLabel = new JLabel(itemHabilidad.getNombreHab());
+			JButton btnSubCompletarHabil = new JButton("Calificar");
 			btnSubCompletarHabil.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					if(itemSubCategoria.isCompletado())
-						myFrame.dispose();
-					else
-						new HabilidadesJFrame(idCategoria,itemSubCategoria.getId());
+					
 				}
 			});
 			add(myLabel);

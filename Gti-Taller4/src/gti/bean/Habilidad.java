@@ -5,32 +5,22 @@ import java.util.Arrays;
 public class Habilidad {
 	private int Id;
 	private String nombreHab,codigoHab;
-	private int[] valor;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public Habilidad(int id, String nombreHab, String codigoHab, int[] valor) {
+	private int valorInicial, valorFinal;
+	public Habilidad(int id, String nombreHab, String codigoHab,
+			int valorInicial, int valorFinal) {
 		super();
 		Id = id;
 		this.nombreHab = nombreHab;
 		this.codigoHab = codigoHab;
-		this.valor = valor;
+		this.valorInicial = valorInicial;
+		this.valorFinal = valorFinal;
 	}
-	
 	@Override
 	public String toString() {
 		return "Habilidad [Id=" + Id + ", nombreHab=" + nombreHab
-				+ ", codigoHab=" + codigoHab + ", valor="
-				+ Arrays.toString(valor) + "]";
+				+ ", codigoHab=" + codigoHab + ", valorInicial=" + valorInicial
+				+ ", valorFinal=" + valorFinal + "]";
 	}
-
 	public int getId() {
 		return Id;
 	}
@@ -49,13 +39,18 @@ public class Habilidad {
 	public void setCodigoHab(String codigoHab) {
 		this.codigoHab = codigoHab;
 	}
-	public int[] getValor() {
-		return valor;
+	public int getValorInicial() {
+		return valorInicial;
 	}
-	public void setValor(int[] valor) {
-		this.valor = valor;
+	public void setValorInicial(int valorInicial) {
+		this.valorInicial = valorInicial;
 	}
-	
-	
+	public int getValorFinal() {
+		return valorFinal;
+	}
+	public void setValorFinal(int valorFinal) {
+		this.valorFinal = valorFinal;
+	}
+
 	
 }

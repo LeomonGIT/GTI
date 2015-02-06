@@ -25,7 +25,9 @@ public class InicioJFrame extends JFrame {
     static int countMe = 0;
     JPanel mainPanel;
     private TodoCategoria todoCat;
-
+    public InicioJFrame() {
+		super("InicioJFrame");
+	}
     public static void main(String[] args) {
     	
        
@@ -51,18 +53,7 @@ public class InicioJFrame extends JFrame {
         	myFrame.pack();
         }
         
-        JButton buttonRemoveAll = new JButton("Remove All");
-        buttonRemoveAll.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                mainPanel.removeAll();
-                myFrame.pack();
-            }
-        });
-
         getContentPane().add(mainPanel, BorderLayout.PAGE_START);
-        //getContentPane().add(buttonAdd, BorderLayout.PAGE_START);
-        getContentPane().add(buttonRemoveAll, BorderLayout.PAGE_END);
     }
     private class subPanel extends JPanel {
 		private static final long serialVersionUID = 4479295537341105669L;
@@ -79,7 +70,6 @@ public class InicioJFrame extends JFrame {
             	btnCompletar.addActionListener(new ActionListener(){
 
             		public void actionPerformed(ActionEvent e) {
-            			System.out.println("idCategoria:"+itemCategoria.getId());
             			new SubCategoriaJFrame(itemCategoria.getId());
             		}
             	});

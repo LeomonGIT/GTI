@@ -1,7 +1,5 @@
 package gti.bean;
 
-import java.util.Arrays;
-
 public class Habilidad {
 	private int Id;
 	private String nombreHab,codigoHab;

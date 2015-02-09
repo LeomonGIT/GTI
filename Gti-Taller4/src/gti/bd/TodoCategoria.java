@@ -1,9 +1,6 @@
 package gti.bd;
 
 import gti.bean.Categoria;
-import gti.bean.Subcategoria;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class TodoCategoria {

@@ -101,21 +101,21 @@ public class Informacion {
 		switch (id) {
 		case 0:
 			habil = new Habilidad[7];
-			habil[0] = new Habilidad(0, "Gobernanza de las TI", "GOVN", "", 5,
+			habil[0] = new Habilidad(0, "Gobernanza de las TI", "GOVN", "Se refiere al establecimiento y supervisión del enfoque de una organización respecto al uso de la Información y las TI, incluyendo la aceptación de responsabilidades en relación tanto al suministro como a la demanda de las TI; planes estratégicos para las TI, que satisfagan las necesidades de la estrategia empresarial de una organización (que, a cambio, tiene en cuenta las capacidades actuales y futuras de las TI); toma de decisiones transparente, que conduce a motivos válidos para las adquisiciones de las TI con un balance adecuado entre beneficios, oportunidades, costes y riesgos; prestación de servicios de TI, niveles de servicio y calidad del servicio que cumplan con los requisitos empresariales actuales y futuros; políticas y prácticas para el cumplimiento de la legislación y regulaciones obligatorias, que muestren respeto por las necesidades actuales y en evolución de todas las partes interesadas.", 5,
 					7, cargarDetailValorHabil(0));
 			habil[1] = new Habilidad(1, "Gestión de la información", "IRMG",
-					"", 4, 7, cargarDetailValorHabil(1));
+					"Corresponde a la gestión global del uso de todo tipo de información, estructurada y no estructurada, tanto si se produce interna o externamente, para respaldar la toma de decisiones y los procesos empresariales. Abarca el desarrollo y la promoción de la estrategia y políticas que abordan el diseño de estructuras y taxonomías de información, el establecimiento de políticas para el abastecimiento y el mantenimiento del contenido de datos, y el desarrollo de políticas, procedimientos, prácticas laborales y formación para fomentar el cumplimiento de la legislación regulando la gestión de registros, y todos los aspectos del mantenimiento, uso y divulgación de datos.", 4, 7, cargarDetailValorHabil(1));
 			habil[2] = new Habilidad(2,
-					"Coordinación de sistemas de información", "ISCO", "", 6,
+					"Coordinación de sistemas de información", "ISCO", "Se refiere a que normalmente dentro de una gran organización donde la función de la estrategia de información se atribuye a unidades autónomas, o dentro de una empresa colaborativa de organizaciones independientes, la coordinación de la estrategia de información es importante cuando la adopción de un enfoque común (como los servicios compartidos) supondría un beneficio para la organización.", 6,
 					7, cargarDetailValorHabil(2));
 			habil[3] = new Habilidad(3, "Seguridad de la información", "SCTY",
-					"", 3, 6, cargarDetailValorHabil(3));
+					"Corresponde a la gestión, así como el asesoramiento por parte de expertos, de la selección, el diseño, la justificación, la aplicación y el funcionamiento de los controles de seguridad de la información y las estrategias de gestión para mantener la confidencialidad, integridad, disponibilidad, transparencia y cumplimiento de los sistemas de información con la legislación, las regulaciones y las normas aplicables.", 3, 6, cargarDetailValorHabil(3));
 			habil[4] = new Habilidad(4, "Garantía de la información", "INAS",
-					"", 5, 7, cargarDetailValorHabil(4));
+					"Corresponde al liderazgo y supervisión de la garantía de la información, el establecimiento de estrategias y políticas de alto nivel, para garantizar a las partes interesadas que el riesgo de la integridad de la información durante el almacenamiento y la transmisión se gestione de manera pragmática, adecuada y rentable.", 5, 7, cargarDetailValorHabil(4));
 			habil[5] = new Habilidad(5, "Análisis de la información", "INAN",
-					"", 3, 7, cargarDetailValorHabil(5));
+					"Se refiere a la validación y el análisis de la información, incluyendo la capacidad de descubrir y cuantificar los patrones en los datos de cualquier tipo, incluyendo números, símbolos, texto, sonido e imagen. Las técnicas pertinentes incluyen estadística y minería de datos o métodos de aprendizaje automatizados, tales como inducción de reglas, redes neuronales artificiales, algoritmos genéticos y sistemas de indización automatizados.", 3, 7, cargarDetailValorHabil(5));
 			habil[6] = new Habilidad(6,
-					"Publicación del contenido de la información", "ICPM", "",
+					"Publicación del contenido de la información", "ICPM", "Se refiere a la gestión y adaptación de los procesos que recopilan, reúnen y publican información, incluidos en formas no estructuradas y semiestructuradas, para su entrega al usuario en el momento que sea necesario.",
 					1, 6, cargarDetailValorHabil(6));
 			break;
 		case 1:
@@ -373,10 +373,11 @@ public class Informacion {
 		return habil;
 	}
 
-	// TODO: Terminar de "Harcodear" los datos de las habilidades
+	// TODO: Terminar Asesoramiento y orientacion SUB-CATEGORIA -- pag 20 SFIA
 	private String[] cargarDetailValorHabil(int id) {
 		String[] detailValHabil = null;
 		switch (id) {
+		//Sub categoria 1
 		case 0:
 			detailValHabil = new String[3];
 			detailValHabil[0] = "Revisa sistemas de información para comprobar su cumplimiento con la legislación y especifica cualquier cambio necesario. Es responsable de garantizar el cumplimiento con las políticas y procedimientos organizativos y la estrategia global de gestión de la información.";
@@ -385,47 +386,48 @@ public class Informacion {
 			break;
 		case 1:
 			detailValHabil = new String[4];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Comprende y cumple con las políticas y procedimientos de la organización correspondientes, asumiendo la responsabilidad de la evaluación y gestión de los riesgos en torno al uso de la información. Garantiza que la información se presente de manera eficaz. Garantiza que se establezcan controles efectivos para la delegación, auditoría y control internos y que el organismo reciba informes y asesoramiento oportunos que fundamentarán sus decisiones.";
+			detailValHabil[1] = "Redacta y mantiene la política, normas y procedimientos para el cumplimiento de la legislación aplicable. Comprende las implicaciones de la información, tanto interna como externa, que puede extraerse de los sistemas empresariales y de otros lugares. Toma decisiones empresariales en base a esa información, incluyendo la necesidad de realizar cambios en los sistemas. Revisa nuevas propuestas empresariales y proporciona asesoramiento especializado sobre la gestión de la información, incluyendo el asesoramiento sobre la idea del trabajo cooperativo y de la evaluación y gestión del riesgo, así como la promoción de la misma. Crea y mantiene un inventario de los activos de información, están sujetos a la legislación aplicable. Prepara y revisa la notificación periódica de los datos de registro y la remite a las autoridades reguladoras correspondientes. Garantiza que las solicitudes y quejas formales sobre el acceso a la información se abordan según los procedimientos acordados.";
+			detailValHabil[2] = "Mantiene y comunica la estrategia de gestión de información de la organización, garantizando que se elaboren y apliquen definiciones de datos reconocidas y aceptadas por igual en toda la organización. Garantiza que los procesos empresariales y la información necesarios para respaldar la organización se elaboran de forma precisa y establece normas, procesos, y arquitecturas de datos pertinentes. Identifica el impacto de cualquier disposición reglamentaria, interna o externa, acerca del uso de la información de la organización y desarrolla estrategias para el cumplimiento. Coordina recursos informativos para cumplir objetivos empresariales concretos al mismo tiempo que se mantienen los principios de normas, transparencia, claridad, igualdad y diversidad profesionales y de claridad de objetivos. Aplica sistemas y controles de las TI para medir el rendimiento, gestionar el riesgo y garantizar que las TI y la empresa trabajan conjuntamente para respaldar el objetivo empresarial.";
+			detailValHabil[3] = "Especifica, a nivel de estrategia, las funciones empresariales y los sujetos de dato necesarios para respaldar el futuro negocio, permitiendo así el desarrollo de una Arquitectura de la Información. Establece y comunica la estrategia de gestión de la información de la organización, desarrollándola como una parte integrada de la estrategia empresarial. Dirige recursos informativos para crear valor para las partes interesadas mediante la mejora del rendimiento de la organización, al mismo tiempo que se mantienen los principios de la transparencia, claridad, igualdad y diversidad profesionales y de claridad de objetivos. Es responsable del cumplimiento con las regulaciones, normas y códigos de buenas prácticas en relación a la información y la documentación. Registra la gestión, garantía de información y protección de datos.";
 			break;
 		case 2:
 			detailValHabil = new String[2];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Está al tanto de las necesidades globales de la organización, y promueve los beneficios que un enfoque común en la aplicación de las TI aportará a la empresa en su conjunto, entre los sistemas de información y gestión empresarial. Coordina el fomento, desarrollo, adquisición y aplicación de los sistemas de información y servicios en estrecha colaboración con los responsables de la gestión y estrategia.";
+			detailValHabil[1] = "Establece, mantiene y comunica la estrategia de gestión de información de la organización, así como las políticas, normas, procedimientos y métodos necesarios para aplicar la estrategia. Coordina todos los aspectos de la gestión del ciclo de vida de los sistemas de información. Representa los intereses de toda la organización ante órganos externos y de gestión general acerca de cuestiones relacionadas con la estrategia de la información.";
 			break;
 		case 3:
 			detailValHabil = new String[4];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Aplica y mantiene los controles de seguridad específicos exigidos por la política de la organización y evaluaciones de los riesgos locales para mantener la confidencialidad, integridad y disponibilidad de los sistemas de información empresarial y para incrementar la resistencia al acceso no autorizado. Colabora en evaluaciones de vulnerabilidad. Reconoce cuando una red o sistema de TI ha sido atacado internamente, mediante un host remoto o un código malintencionado, como un virus, un gusano, un troyano, etc., o cuando se ha producido una vulneración de la seguridad. Toma medidas inmediatas para limitar los daños, conforme a la política de seguridad de la organización, que puede incluir una derivación al siguiente nivel, y registra el accidente y las medidas tomadas. Muestra una comunicación eficaz de los problemas de seguridad a los directivos de la empresa y otros. Realiza evaluaciones de riesgos básicas para sistemas de información pequeños.";
+			detailValHabil[1] = "Realiza evaluaciones de riesgos de seguridad y vulnerabilidad para las aplicaciones empresariales definidas o instalaciones de las IT en áreas definidas, y proporciona asesoramiento y orientación sobre la aplicación y funcionamiento de controles de seguridad técnica, física y de procedimiento elementales (por ejemplo, controles clave definidos en la norma ISO27001). Realiza evaluaciones de riesgo y vulnerabilidad, así como análisis del impacto comercial para los sistemas de información de tamaño medio. Investiga las sospechas de ataques y gestiona incidentes de seguridad.";
+			detailValHabil[2] = "Obtiene y actúa en relación a información sobre vulnerabilidades y realiza evaluaciones de riesgos de seguridad para aplicaciones empresariales e instalaciones informáticas; proporciona asesoramiento fidedigno y orientación sobre las estrategias de seguridad para gestionar el riesgo detectado. Investiga las infracciones de seguridad más graves, y recomienda mejoras adecuadas en el control. Interpreta la política de seguridad y contribuye al desarrollo de normas y directrices que cumplan con esta. Realiza la evaluación de riesgos, análisis de impacto comercial y acreditación para todos los sistemas de información más importantes dentro de la organización. Garantiza una respuesta adecuada a la información sobre vulnerabilidades, incluyendo el uso adecuado de investigación forense.";
+			detailValHabil[3] = "Proporciona liderazgo y directrices sobre la experiencia en seguridad de garantía de la información para la organización, mediante un trabajo efectivo con las funciones estratégicas de la organización, tales como expertos jurídicos y servicio técnico para proporcionar asesoramiento fidedigno y orientación sobre los requisitos para los controles de seguridad. Facilita el restablecimiento de los sistemas de información, garantizando que se incorporen las capacidades de protección, detección y reacción.";
 			break;
 		case 4:
 			detailValHabil = new String[3];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Proporciona asesoramiento y orientación fidedignos en estrategias y arquitectura de garantía de la información para gestionar el riesgo detectado. Está familiarizado con la legislación aplicable más importante en relación a la seguridad de la información. Interpreta las políticas de seguridad y de garantía y contribuye al desarrollo de normas y directrices que cumplan con estas. Realiza pruebas para respaldar la garantía de la información.";
+			detailValHabil[1] = "Desarrolla las políticas de seguridad de la información de la empresa, normas y directrices. Prepara y mantiene las estrategias de la organización que abordan la evolución de los riesgos empresariales y los requisitos de control de la información. Funciona como centro de experiencia gobernativa de garantía de la información para la organización, mediante un trabajo efectivo con las funciones estratégicas de la organización, como expertos jurídicos y soporte técnico para proporcionar asesoramiento y orientación fidedignos sobre los requisitos de los controles de seguridad. Garantiza que se apliquen los principios arquitectónicos durante el diseño para reducir el riesgo, y promueve las normas de garantía garantizando una comprobación rigorosa de la seguridad.";
+			detailValHabil[2] = "Establece y gestiona la estrategia y las políticas de garantía de la información conforme a las normas aplicables. Planifica y aplica procesos para hacer avanzar la estrategia y las políticas. Proporciona liderazgo y directrices para la prestación de los requisitos de garantía de la información a través de toda la información de la organización y los sistemas de información.";
 			break;
 		case 5:
 			detailValHabil = new String[5];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Realiza actividades analíticas y proporciona resultados de los análisis, conforme a las necesidades del cliente y según las normas acordadas.";
+			detailValHabil[1] = "Evalúa la integridad de los datos procedentes de diversas fuentes (incluyendo, por ejemplo, de detectores y sistemas de medición). Aplica una variedad de técnicas analíticas y de presentación, en consulta con expertos, si procede, y con prudencia en relación a las limitaciones de las técnicas.";
+			detailValHabil[2] = "Validar de forma independiente información externa procedente de diversas fuentes. Especifica y aplica las técnicas analíticas adecuadas e informa sobre los resultados a los clientes y al departamento de gestión.";
+			detailValHabil[3] = "Es responsable del compromiso de la organización para lograr un análisis eficiente y eficaz de la información textual, numérica visual o auditiva, incluyendo procesos para adquirir y validar información externa de forma regular y coherente.";
+			detailValHabil[4] = "Establece y gestiona métodos y técnicas de análisis de la información. Planifica y aplica la divulgación de métodos y técnicas, y proporciona liderazgo y orientación para el análisis de información interna y externa. Identifica y establece la veracidad de las fuentes de información externas relevantes para las necesidades operativas de la empresa. Establece u gestiona los medios para validar de forma independiente información externa procedente de diversas fuentes. Planifica y aplica procesos para adquirir y validar información externa de forma regular y coherente.";
 			break;
 		case 6:
 			detailValHabil = new String[6];
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
-			detailValHabil[0] = "";
+			detailValHabil[0] = "Contribuye, bajo instrucciones, a las actividades de respaldo de la publicación y colabora en la recopilación de información.";
+			detailValHabil[1] = "Elabora actividades de respaldo de publicaciones como las de redacción, ilustración, impresión, etc. Comprende los conceptos, herramientas y métodos de publicación técnica, instrumentos y la forma en la que estos se aplican. Obtiene y analiza información de uso y la presenta en forma efectiva.";
+			detailValHabil[2] = "Especifica y crea procesos de gestión de contenido para satisfacer las necesidades de los usuarios. Utiliza herramientas en consenso para ofrecer material terminado en plataformas adecuadas.";
+			detailValHabil[3] = "Define y gestiona los procesos de gestión de contenidos para satisfacer las necesidades de los usuarios. Utiliza técnicas y herramientas adecuadas para proporcionar interfaces moderadamente complejas a plataformas y aplicaciones nuevas o existentes.";
+			detailValHabil[4] = "Desarrolla normas y procedimientos para respaldar la publicación de contenido. Diseña estructuras globales de información de respaldo. Asume la responsabilidad de las tareas de publicación, incluyendo, por ejemplo, el diseño de la estructura general y el estilo gráfico de sitios web importantes, complejos o destacados. Selecciona las herramientas adecuadas, las plantillas y las normas para la publicación en diversas formas, de acuerdo con las expectativas del cliente (distinguiendo, por ejemplo, entre necesidades tales como la optimización y la facilidad de modificación). Establece normas de diseño y codificación, teniendo en cuenta el ancho de banda y la compatibilidad.";
+			detailValHabil[5] = "Desarrolla estrategias para la entrega de información de respaldo, incluidos los medios de comunicación preferidos, las reglas para el formato del contenido y la estrategia de reprografía, si procede. Garantiza que existan los procedimientos adecuados, normas, instrumentos y recursos para garantizar la calidad correcta del material elaborado por los responsables de publicación de la información dentro de la organización. Asume la responsabilidad de estrategia de publicación, incluyendo, por ejemplo, los marcos de la estructura general de la información y el estilo gráfico de sitios web importantes, complejos o destacados. Dirige la selección de las herramientas, plantillas y normas apropiadas para la publicación en diversas formas, de acuerdo con las expectativas del cliente.";
 			break;
-		case 7:
+			
+		case 7: //Sub categoria 2
 			detailValHabil = new String[3];
 			detailValHabil[0] = "";
 			detailValHabil[0] = "";

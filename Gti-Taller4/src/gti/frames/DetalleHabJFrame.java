@@ -3,6 +3,7 @@ package gti.frames;
 import gti.bd.TodoCategoria;
 import gti.bean.Habilidad;
 
+import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;
@@ -17,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class DetalleHabJFrame extends JFrame {
@@ -55,33 +58,52 @@ public class DetalleHabJFrame extends JFrame {
 		Container description = detailsComponents("Detalle",
 				Component.LEFT_ALIGNMENT, habilidad);
 		myFrame.add(description);
-		String[] valores = habilidad.getDetalleValorHabilidad();
-		for (int i = 0; i < valores.length; i++) {
-			Container comp = layoutComponents(""+i, Component.LEFT_ALIGNMENT,valores[i]);
-			comp.setMinimumSize(new Dimension(250, 450)); 
-			comp.setPreferredSize(new Dimension(250, 450)); 
-			comp.setMaximumSize(new Dimension(Short.MAX_VALUE, 
-			                                  Short.MAX_VALUE)); 
-			
-			myFrame.add(comp);
-		}		
+		Container maindesc = mainComponent(habilidad);
+		myFrame.add(maindesc);
+//		String[] valores = habilidad.getDetalleValorHabilidad();
+//		for (int i = 0; i < valores.length; i++) {
+//			Container comp = layoutComponents(""+i, Component.LEFT_ALIGNMENT,valores[i]);
+//			comp.setMinimumSize(new Dimension(250, 450)); 
+//			comp.setPreferredSize(new Dimension(250, 450)); 
+//			comp.setMaximumSize(new Dimension(Short.MAX_VALUE, 
+//			                                  Short.MAX_VALUE)); 
+//			
+//			myFrame.add(comp);
+//		}		
 	}
-
+	private static Container mainComponent(Habilidad hab) {
+		JPanel container = new JPanel();
+		container.setBorder(BorderFactory.createTitledBorder("Valores"));
+		String[] valores = hab.getDetalleValorHabilidad();
+		for (int i = 0; i < valores.length; i++) {
+			int title = hab.getValorInicial()+i;
+			Container comp = layoutComponents(""+title, Component.LEFT_ALIGNMENT,valores[i]);
+//			comp.setMinimumSize(new Dimension(250, 450)); 
+//			comp.setPreferredSize(new Dimension(250, 450)); 
+//			comp.setMaximumSize(new Dimension(Short.MAX_VALUE, 
+//			                                  Short.MAX_VALUE)); 
+			
+			container.add(comp);
+		}	
+//		JScrollPane jsp = new JScrollPane(container,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+//		         JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+//		myFrame.add(jsp);
+		return container;
+	}
 	private static Container detailsComponents(String title, float alignment,
 			Habilidad habil) {
 
-		JPanel container = new JPanel();
-		container.setBorder(BorderFactory.createTitledBorder(title));
-		BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
-		container.setLayout(layout);
+		JPanel jpanel = new JPanel();
+		jpanel.setBorder(BorderFactory.createTitledBorder(title));
+		BoxLayout layout = new BoxLayout(jpanel, BoxLayout.Y_AXIS);
+		jpanel.setLayout(layout);
 		String html1 = "<html><body style='width: ";
         String html2 = "px'>";
-		JLabel description = new JLabel(html1+"200"+html2+habil.getDescr());
-		 
+		JLabel description = new JLabel(html1+"200"+html2+habil.getDescr());		 
 		description.setAlignmentX(alignment);
-		container.setSize(500, 500);
-		container.add(description);
-		return container;
+		jpanel.setSize(500, 500);
+		jpanel.add(description);
+		return jpanel;
 	}
 
 	private static Container layoutComponents(String title, float alignment,
@@ -91,13 +113,14 @@ public class DetalleHabJFrame extends JFrame {
 		container.setBorder(BorderFactory.createTitledBorder(title));
 		BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
 		container.setLayout(layout);
-		String html1 = "<html><p> ";
-        String html2 = "</p></html>";
-		JLabel label = new JLabel(html1+descValorHabil+html2);
-//		String html1 = "<html><body style='width: ";
-//        String html2 = "px'>";
-		//JLabel label = new JLabel(html1+"200"+html2+descValorHabil);
+		String html1 = "<html><body style='width: ";
+        String html2 = "px'>";
+		JLabel label = new JLabel(html1+"200"+html2+descValorHabil);
+//		String html1 = "<html><p> ";
+//        String html2 = "</p></html>";
+//		JLabel label = new JLabel(html1+descValorHabil+html2);
 		label.setAlignmentX(alignment);
+		container.setSize(500, 500);
 		container.add(label);
 
 		return container;

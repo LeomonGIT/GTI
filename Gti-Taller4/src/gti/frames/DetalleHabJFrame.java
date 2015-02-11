@@ -111,11 +111,12 @@ public class DetalleHabJFrame extends JFrame {
 		label.setAlignmentX(alignment);
 		container.setSize(500, 500);
 		container.add(label);
-		JButton btnSeleccionarHabil = new JButton("Regresar");
+		JButton btnSeleccionarHabil = new JButton("Seleccionar");
 		btnSeleccionarHabil.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				double result = 100*((double)title/(double)habilidad.getValorFinal());
+				result = Math.round( result * 100.0 ) / 100.0;
 				TodoCategoria.getInstancia().getCategoria().get(idCategoria)
 						.getSubcategoria()[idSubCate].getHabilidades()[idHabil]
 						.setCalificacion(title);

@@ -21,6 +21,7 @@ public class HabilidadesJFrame extends JFrame {
 	JPanel mainPanel;
 	private static int idHabilidades, idCategoria;
 	private JPanel btnPanel;
+
 	public HabilidadesJFrame() {
 		super("HabilidadesJFrame");
 	}
@@ -43,7 +44,7 @@ public class HabilidadesJFrame extends JFrame {
 	}
 
 	private void prepareUI() {
-		 btnPanel = new JPanel();
+		btnPanel = new JPanel();
 		todo = TodoCategoria.getInstancia();
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
@@ -67,7 +68,9 @@ public class HabilidadesJFrame extends JFrame {
 		btnSubGrafico.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+				
+				 BarChartJFrame mainFrame = new BarChartJFrame(idCategoria,idHabilidades);
+			        mainFrame.setVisible(true);
 				myFrame.dispose();
 			}
 		});
@@ -89,7 +92,8 @@ public class HabilidadesJFrame extends JFrame {
 			btnSubCompletarHabil.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					new DetalleHabJFrame(idHabilidades, idCategoria,itemHabilidad.getId());
+					new DetalleHabJFrame(idHabilidades, idCategoria,
+							itemHabilidad.getId());
 					myFrame.dispose();
 				}
 			});

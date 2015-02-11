@@ -5,7 +5,8 @@ public class Habilidad {
 	private String nombreHab, codigoHab, descr;
 	private int valorInicial, valorFinal;
 	private String[] detalleValorHabilidad;
-	private int calificacion = 0, calFinal = 0;
+	private int calificacion = 0;
+	private double calFinal = 0.0f;
 
 	public Habilidad(int id, String nombreHab, String codigoHab, String descr,
 			int valorInicial, int valorFinal, String[] detalleValorHabilidad) {
@@ -92,12 +93,13 @@ public class Habilidad {
 		this.calificacion = calificacion;
 	}
 
-	public int getCalFinal() {
+	public double getCalFinal() {
 		return calFinal;
 	}
 
-	public void setCalFinal(int calFinal) {
+	public void setCalFinal(double calFinal) {
 		this.calFinal = calFinal;
 	}
+
 
 }

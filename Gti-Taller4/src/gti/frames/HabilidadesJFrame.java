@@ -20,7 +20,7 @@ public class HabilidadesJFrame extends JFrame {
 	static HabilidadesJFrame myFrame;
 	JPanel mainPanel;
 	private static int idHabilidades, idCategoria;
-
+	private JPanel btnPanel;
 	public HabilidadesJFrame() {
 		super("HabilidadesJFrame");
 	}
@@ -43,6 +43,7 @@ public class HabilidadesJFrame extends JFrame {
 	}
 
 	private void prepareUI() {
+		 btnPanel = new JPanel();
 		todo = TodoCategoria.getInstancia();
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
@@ -62,8 +63,18 @@ public class HabilidadesJFrame extends JFrame {
 				myFrame.dispose();
 			}
 		});
-		getContentPane().add(mainPanel, BorderLayout.PAGE_START);
-		getContentPane().add(btnSubCompletar, BorderLayout.PAGE_END);
+		JButton btnSubGrafico = new JButton("Gráfico");
+		btnSubGrafico.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				myFrame.dispose();
+			}
+		});
+		myFrame.add(btnPanel, BorderLayout.SOUTH);
+		myFrame.add(mainPanel, BorderLayout.PAGE_START);
+		btnPanel.add(btnSubGrafico);
+		btnPanel.add(btnSubCompletar);
 	}
 
 	private class habilidadesPanel extends JPanel {
@@ -79,6 +90,7 @@ public class HabilidadesJFrame extends JFrame {
 
 				public void actionPerformed(ActionEvent e) {
 					new DetalleHabJFrame(idHabilidades, idCategoria,itemHabilidad.getId());
+					myFrame.dispose();
 				}
 			});
 			add(myLabel);

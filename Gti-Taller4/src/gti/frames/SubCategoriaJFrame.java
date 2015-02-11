@@ -48,8 +48,7 @@ public class SubCategoriaJFrame extends JFrame {
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
-		subCategoria = todo.getCategoria().get(idCategoria)
-				.getSubcategoria();
+		subCategoria = todo.getCategoria().get(idCategoria).getSubcategoria();
 		for (Subcategoria itemSubCategoria : subCategoria) {
 			mainPanel.add(new subCategoriaPanel(itemSubCategoria));
 			myFrame.pack();
@@ -59,7 +58,7 @@ public class SubCategoriaJFrame extends JFrame {
 		btnSubCompletar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
+
 				myFrame.dispose();
 			}
 		});
@@ -77,10 +76,12 @@ public class SubCategoriaJFrame extends JFrame {
 			btnSubCompletarHabil.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					if(itemSubCategoria.isCompletado())
+					if (itemSubCategoria.isCompletado())
 						myFrame.dispose();
 					else
-						new HabilidadesJFrame(idCategoria,itemSubCategoria.getId());
+						new HabilidadesJFrame(idCategoria, itemSubCategoria
+								.getId());
+
 				}
 			});
 			add(myLabel);

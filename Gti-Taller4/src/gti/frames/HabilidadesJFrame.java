@@ -19,7 +19,7 @@ public class HabilidadesJFrame extends JFrame {
 	Habilidad[] habilidad = null;
 	static HabilidadesJFrame myFrame;
 	JPanel mainPanel;
-	private static int idHabilidades,idCategoria;
+	private static int idHabilidades, idCategoria;
 
 	public HabilidadesJFrame() {
 		super("HabilidadesJFrame");
@@ -30,7 +30,7 @@ public class HabilidadesJFrame extends JFrame {
 		super("HabilidadesJFrame");
 		System.out.println("id:" + id);
 		this.idHabilidades = id;
-		this.idCategoria=idCategoria;
+		this.idCategoria = idCategoria;
 		createAndShowGUI();
 	}
 
@@ -46,9 +46,9 @@ public class HabilidadesJFrame extends JFrame {
 		todo = TodoCategoria.getInstancia();
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-		
-		habilidad = todo.getCategoria().get(idCategoria)
-				.getSubcategoria()[idHabilidades].getHabilidades();
+
+		habilidad = todo.getCategoria().get(idCategoria).getSubcategoria()[idHabilidades]
+				.getHabilidades();
 		for (Habilidad itemHabilidad : habilidad) {
 			mainPanel.add(new habilidadesPanel(itemHabilidad));
 			myFrame.pack();
@@ -58,24 +58,27 @@ public class HabilidadesJFrame extends JFrame {
 		btnSubCompletar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
+
 				myFrame.dispose();
 			}
 		});
 		getContentPane().add(mainPanel, BorderLayout.PAGE_START);
 		getContentPane().add(btnSubCompletar, BorderLayout.PAGE_END);
 	}
-	
+
 	private class habilidadesPanel extends JPanel {
 
 		public habilidadesPanel(final Habilidad itemHabilidad) {
 			super();
-			JLabel myLabel = new JLabel(itemHabilidad.getNombreHab());
+			JLabel myLabel = new JLabel(itemHabilidad.getNombreHab() + "  -  "
+					+ itemHabilidad.getCodigoHab() + "  -  "
+					+ itemHabilidad.getCalificacion() + "  -  "
+					+ itemHabilidad.getCalFinal());
 			JButton btnSubCompletarHabil = new JButton("Calificar");
 			btnSubCompletarHabil.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					new DetalleHabJFrame();
+					new DetalleHabJFrame(idHabilidades, idCategoria,itemHabilidad.getId());
 				}
 			});
 			add(myLabel);

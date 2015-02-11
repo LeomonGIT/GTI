@@ -8,14 +8,6 @@ public class Subcategoria {
 	private Habilidad[] habilidades;
 	private boolean completado=false;
 	
-	
-	
-	@Override
-	public String toString() {
-		return "Subcategoria [id=" + id + ", nombreSub=" + nombreSub
-				+ ", habilidades=" + Arrays.toString(habilidades)
-				+ ", completado=" + completado + "]";
-	}
 	public Subcategoria(int id, String nombreSub, Habilidad[] habilidades,
 			boolean completado) {
 		super();
@@ -23,6 +15,12 @@ public class Subcategoria {
 		this.nombreSub = nombreSub;
 		this.habilidades = habilidades;
 		this.completado = completado;
+	}
+	@Override
+	public String toString() {
+		return "Subcategoria [id=" + id + ", nombreSub=" + nombreSub
+				+ ", habilidades=" + Arrays.toString(habilidades)
+				+ ", completado=" + completado + "]";
 	}
 	public int getId() {
 		return id;
@@ -48,6 +46,7 @@ public class Subcategoria {
 	public void setCompletado(boolean completado) {
 		this.completado = completado;
 	}
+		
 	
 	
 	

@@ -26,7 +26,7 @@ public class InicioJFrame extends JFrame {
     JPanel mainPanel;
     private TodoCategoria todoCat;
     public InicioJFrame() {
-		super("InicioJFrame");
+		super("Taller 3");
 	}
     public static void main(String[] args) {
     	

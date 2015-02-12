@@ -56,7 +56,7 @@ public class BarChartJFrame extends JFrame {
 				 * Constructor del Scatter chart
 				 */
 				NumberAxis yAxis = new NumberAxis(0.0, 7.0, 1.0);
-				NumberAxis xAxis = new NumberAxis(0.0, 7.0, 1.0);
+				NumberAxis xAxis = new NumberAxis(0.0, habilidades.length, 1.0);
 				ScatterChart scatterChart = new ScatterChart<>(xAxis, yAxis);
 				XYChart.Series series = new XYChart.Series<>();
 				series.setName("Valor Habilidad");
@@ -80,7 +80,7 @@ public class BarChartJFrame extends JFrame {
 				bar1.setName("Promedio Habilidad ");
 				
 				for (Habilidad habilidad : habilidades) {
-					bar1.getData().add(getData(habilidad.getCalFinal(), habilidad.getNombreHab()+"  ("+habilidad.getCalFinal()+")"));
+					bar1.getData().add(getData(habilidad.getCalFinal(), habilidad.getCodigoHab()+"  ("+habilidad.getCalFinal()+")"));
 					
 				}
 				barChart.getData().addAll(bar1);
@@ -94,7 +94,7 @@ public class BarChartJFrame extends JFrame {
 		btnSubCompletar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+				new HabilidadesJFrame(idCategoria, idSubca);
 				myFrame.dispose();
 			}
 		});

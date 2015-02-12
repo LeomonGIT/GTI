@@ -1,6 +1,7 @@
 package gti.frames;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,6 +47,9 @@ public class HabilidadesJFrame extends JFrame {
 	private void prepareUI() {
 		btnPanel = new JPanel();
 		todo = TodoCategoria.getInstancia();
+		JLabel titleLabel = new JLabel("Seleccione una HABILIDAD: ");
+		titleLabel.setForeground(Color.RED);
+		myFrame.add(titleLabel, BorderLayout.NORTH);
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
@@ -75,7 +79,7 @@ public class HabilidadesJFrame extends JFrame {
 			}
 		});
 		myFrame.add(btnPanel, BorderLayout.SOUTH);
-		myFrame.add(mainPanel, BorderLayout.PAGE_START);
+		myFrame.add(mainPanel, BorderLayout.CENTER);
 		btnPanel.add(btnSubGrafico);
 		btnPanel.add(btnSubCompletar);
 	}
@@ -92,7 +96,7 @@ public class HabilidadesJFrame extends JFrame {
 			btnSubCompletarHabil.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
-					new DetalleHabJFrame(idHabilidades, idCategoria,
+					new DetalleHabJFrame(idCategoria, idHabilidades,
 							itemHabilidad.getId());
 					myFrame.dispose();
 				}

@@ -5,6 +5,7 @@ import gti.bean.Habilidad;
 
 import java.awt.Adjustable;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -22,14 +23,16 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.border.EtchedBorder;
 
 public class DetalleHabJFrame extends JFrame {
 	private TodoCategoria todo = null;
-	static Habilidad habilidad = null;
+	Habilidad habilidad = null;
 	static DetalleHabJFrame myFrame;
 	JPanel mainPanel;
 	private static int idSubCate, idCategoria, idHabil;
-
+	private int x=1200,y=450;
 	public DetalleHabJFrame() {
 		super("HabilidadesJFrame");
 	}
@@ -45,6 +48,7 @@ public class DetalleHabJFrame extends JFrame {
 	}
 
 	private static void createAndShowGUI() {
+		
 		myFrame = new DetalleHabJFrame();
 		myFrame.setLayout(new FlowLayout());
 		myFrame.prepareUI();
@@ -54,25 +58,39 @@ public class DetalleHabJFrame extends JFrame {
 
 	private void prepareUI() {
 		todo = TodoCategoria.getInstancia();
+		mainPanel = new JPanel();
+		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.LINE_AXIS));
+
 		habilidad = todo.getCategoria().get(idCategoria).getSubcategoria()[idSubCate]
 				.getHabilidades()[idHabil];
 		Container description = detailsComponents("Detalle",
 				Component.LEFT_ALIGNMENT, habilidad);
-		myFrame.add(description);
+		mainPanel.add(description, BorderLayout.PAGE_START);
 		Container maindesc = mainComponent(habilidad);
-		myFrame.add(maindesc);
+		mainPanel.add(maindesc);
+		int v=ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS;
+        int h=ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS; 
+        JScrollPane jsp=new JScrollPane(mainPanel,v,h);
+        if(habilidad.getDetalleValorHabilidad().length==2)
+        	x=860;
+        jsp.setPreferredSize(new Dimension(x,y));
+        jsp.setBounds(150,670,850,200);
+        myFrame.add(jsp);
 	}
 
 	private static Container mainComponent(Habilidad hab) {
 		JPanel container = new JPanel();
-		container.setBorder(BorderFactory.createTitledBorder("Valores"));
+		container.setBorder(BorderFactory.createTitledBorder(BorderFactory
+				.createEtchedBorder(EtchedBorder.RAISED, Color.GRAY,
+						Color.DARK_GRAY), "Valores"));
 		String[] valores = hab.getDetalleValorHabilidad();
+
 		for (int i = 0; i < valores.length; i++) {
 			int title = hab.getValorInicial() + i;
-			Container comp = layoutComponents(title, Component.LEFT_ALIGNMENT,
+			Container comp = layoutComponents(title, Component.TOP_ALIGNMENT,
 					valores[i]);
 
-			container.add(comp);
+			container.add(comp, BorderLayout.LINE_START);
 		}
 		return container;
 	}
@@ -82,7 +100,7 @@ public class DetalleHabJFrame extends JFrame {
 
 		JPanel jpanel = new JPanel();
 		jpanel.setBorder(BorderFactory.createTitledBorder(title));
-		BoxLayout layout = new BoxLayout(jpanel, BoxLayout.Y_AXIS);
+		BoxLayout layout = new BoxLayout(jpanel, BoxLayout.X_AXIS);
 		jpanel.setLayout(layout);
 		String html1 = "<html><body style='width: ";
 		String html2 = "px'>";
@@ -110,19 +128,23 @@ public class DetalleHabJFrame extends JFrame {
 		// JLabel label = new JLabel(html1+descValorHabil+html2);
 		label.setAlignmentX(alignment);
 		container.setSize(500, 500);
-		container.add(label);
+		container.add(label, alignment);
 		JButton btnSeleccionarHabil = new JButton("Seleccionar");
 		btnSeleccionarHabil.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				double result = 100*((double)title/(double)habilidad.getValorFinal());
-				result = Math.round( result * 100.0 ) / 100.0;
+				Habilidad habilidads = TodoCategoria.getInstancia()
+						.getCategoria().get(idCategoria).getSubcategoria()[idSubCate]
+						.getHabilidades()[idHabil];
+				double result = 100 * ((double) title / (double) habilidads
+						.getValorFinal());
+				result = Math.round(result * 100.0) / 100.0;
 				TodoCategoria.getInstancia().getCategoria().get(idCategoria)
 						.getSubcategoria()[idSubCate].getHabilidades()[idHabil]
 						.setCalificacion(title);
 				TodoCategoria.getInstancia().getCategoria().get(idCategoria)
-				.getSubcategoria()[idSubCate].getHabilidades()[idHabil]
-				.setCalFinal(result);
+						.getSubcategoria()[idSubCate].getHabilidades()[idHabil]
+						.setCalFinal(result);
 				new HabilidadesJFrame(idCategoria, idSubCate);
 				myFrame.dispose();
 			}

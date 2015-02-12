@@ -4,8 +4,11 @@ import gti.bd.TodoCategoria;
 import gti.bean.Subcategoria;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javafx.embed.swing.JFXPanel;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -27,7 +30,6 @@ public class SubCategoriaJFrame extends JFrame {
 
 	public SubCategoriaJFrame(int id) {
 
-		super("SubCategoria");
 		System.out.println("id:" + id);
 		this.idCategoria = id;
 		createAndShowGUI();
@@ -44,7 +46,9 @@ public class SubCategoriaJFrame extends JFrame {
 	private void prepareUI() {
 		System.out.println("idCategoria:" + idCategoria);
 		todo = TodoCategoria.getInstancia();
-
+		JLabel titleLabel = new JLabel("Seleccione una SUB-CATEGORIA: ");
+		titleLabel.setForeground(Color.RED);
+		myFrame.add(titleLabel, BorderLayout.NORTH);
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
@@ -62,7 +66,7 @@ public class SubCategoriaJFrame extends JFrame {
 				myFrame.dispose();
 			}
 		});
-		getContentPane().add(mainPanel, BorderLayout.PAGE_START);
+		getContentPane().add(mainPanel, BorderLayout.CENTER);
 		getContentPane().add(btnSubCompletar, BorderLayout.PAGE_END);
 	}
 

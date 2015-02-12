@@ -36,7 +36,7 @@ public class Informacion {
 			subCa = new Subcategoria[4];
 			subCa[0] = new Subcategoria(0, "Estrategia de información",
 					cargarHabildades(0), false);
-			subCa[1] = new Subcategoria(1, "Asesoriamiento y orientación",
+			subCa[1] = new Subcategoria(1, "Asesoramiento y orientación",
 					cargarHabildades(1), false);
 			subCa[2] = new Subcategoria(2,
 					"Planificación y estrategia empresarial",
@@ -49,7 +49,7 @@ public class Informacion {
 			subCa = new Subcategoria[4];
 			subCa[0] = new Subcategoria(0, "Aplicacion del cambio empresarial",
 					cargarHabildades(4), false);
-			subCa[1] = new Subcategoria(1, "Gestion del cambio emmpresarial",
+			subCa[1] = new Subcategoria(1, "Gestion del cambio empresarial",
 					cargarHabildades(5), false);
 			subCa[2] = new Subcategoria(2, "Gestion de relaciones",
 					cargarHabildades(6), false);
@@ -60,7 +60,7 @@ public class Informacion {
 			subCa = new Subcategoria[3];
 			subCa[0] = new Subcategoria(0, "Desarrollo de sistemas",
 					cargarHabildades(8), false);
-			subCa[1] = new Subcategoria(1, "Factoes humanos",
+			subCa[1] = new Subcategoria(1, "Factores humanos",
 					cargarHabildades(9), false);
 			subCa[2] = new Subcategoria(2, "Instalación e integración",
 					cargarHabildades(10), false);
@@ -99,7 +99,8 @@ public class Informacion {
 	private Habilidad[] cargarHabildades(int id) {
 		Habilidad[] habil = null;
 		switch (id) {
-		case 0:
+		// CATEGORIA 1
+		case 0:// SUB-CATEGORIA 1
 			habil = new Habilidad[7];
 			habil[0] = new Habilidad(
 					0,
@@ -249,21 +250,37 @@ public class Informacion {
 					"Se trata de garantizar que se adopten y se utilicen de forma efectiva en toda la organización los métodos e instrumentos adecuados para la planificación, desarrollo, pruebas, operación, gestión y mantenimiento de los sistemas.",
 					4, 6, cargarDetailValorHabil(22));
 			break;
-		case 4:
+		// CATEGORIA 2:
+		case 4://SUB-CAT 1
 			habil = new Habilidad[4];
-			habil[0] = new Habilidad(0, "Gestion de carteras", "POMG", "", 5,
-					7, cargarDetailValorHabil(23));
-			habil[1] = new Habilidad(1, "Gestion de programas", "PGMG", "", 6,
-					7, cargarDetailValorHabil(24));
-			habil[2] = new Habilidad(2, "Gestion de proyectos", "PRMG", "", 4,
-					7, cargarDetailValorHabil(25));
-			habil[3] = new Habilidad(3,
-					"Apoyo a carteras, programas y proyectos", "PROF", "", 2,
-					5, cargarDetailValorHabil(26));
+			habil[0] = new Habilidad(
+					0,
+					"Gestion de carteras",
+					"POMG",
+					"Corresponde al desarrollo y aplicación de un marco de gestión sistemática para definir y entregar una cartera de programas, proyectos y servicios continuados, como respaldo de estrategias y objetivos empresariales específicos. Incluye la aplicación de una evaluación estratégica de inversiones y un proceso de toma de decisiones en base a un conocimiento claro del coste, el riesgo e interdependencias, y el impacto de las actividades empresariales existentes, permitiendo una evaluación objetiva y mensurable de los cambios potenciales y los beneficios que deben obtenerse. La priorización de la utilización de recursos y cambios que deben aplicarse. La revisión regular de carteras.",
+					5, 7, cargarDetailValorHabil(23));
+			habil[1] = new Habilidad(
+					1,
+					"Gestion de programas",
+					"PGMG",
+					"Se refiere a la identificación, planificación y coordinación de un conjunto de proyectos relacionados dentro de un programa de cambio empresarial para gestionar sus interdependencias para respaldar estrategias y objetivos empresariales específicos. El mantenimiento de una visión estratégica sobre el conjunto de proyectos, proporcionando el marco para aplicar iniciativas empresariales o un cambio a gran escala mediante la concepción, mantenimiento y comunicación de una visión de los resultados del programa. (La visión y los medios para lograrlo pueden cambiar a medida que avanza el programa). Acuerdo sobre los requisitos empresariales y traducción de los requisitos en planes operativos. Determinación, supervisión y revisión de los costes del programa, presupuestos operativos, requisitos de personal, recursos de programa, interdependencias y riesgo del programa.",
+					6, 7, cargarDetailValorHabil(24));
+			habil[2] = new Habilidad(
+					2,
+					"Gestion de proyectos",
+					"PRMG",
+					"Se refiere a la gestión de proyectos, que afecta generalmente (pero no exclusivamente) al desarrollo y la aplicación de procesos empresariales para satisfacer necesidades empresariales identificadas, adquiriendo y utilizando las habilidades y los recursos necesarios dentro de los parámetros de costo, calidad y plazos acordados.",
+					4, 7, cargarDetailValorHabil(25));
+			habil[3] = new Habilidad(
+					3,
+					"Apoyo a carteras, programas y proyectos",
+					"PROF",
+					"Corresponde a la prestación de apoyo y orientación acerca de los procesos de gestión de carteras, programas y proyectos, así como procedimientos, herramientas y técnicas. El apoyo incluye la definición de carteras, programas y proyectos; el asesoramiento sobre el desarrollo, producción y mantenimiento de casos empresariales; planes de plazos, recursos, costes y excepciones, y el uso de herramientas de software relacionadas. También se abordan el seguimiento y la elaboración de informes sobre el progreso y el rendimiento del programa/proyecto, como la capacidad de facilitar todos los aspectos de reuniones, talleres y documentación sobre la cartera/programa/proyecto.",
+					2, 5, cargarDetailValorHabil(26));
 			break;
-		case 5:
+		case 5://SUB-CAT 2
 			habil = new Habilidad[8];
-			habil[0] = new Habilidad(0, "Analisis empresarial", "BUAN", "", 3,
+			habil[0] = new Habilidad(0, "Analisis empresarial", "BUAN", "Corresponde a la investigación metódica, el análisis, la revisión y la documentación de la totalidad o parte de una empresa en términos de funciones y procesos empresariales, la información utilizada y los datos en los que se basa la información. La definición de requisitos para mejorar cualquier aspecto de los procesos y sistemas, reducir sus costes y aumentar su sostenibilidad, y la cuantificación de los posibles beneficios empresariales. La creación de especificaciones viables y criterios de aceptación en la preparación para la construcción de sistemas de información y comunicación.", 3,
 					6, cargarDetailValorHabil(27));
 			habil[1] = new Habilidad(1, "Gestion y definicion de requisitos",
 					"REQM", "", 2, 6, cargarDetailValorHabil(28));
@@ -283,13 +300,13 @@ public class Informacion {
 			habil[7] = new Habilidad(7, "Evaluacion de la sostenibilidad",
 					"SUAS", "", 4, 6, cargarDetailValorHabil(34));
 			break;
-		case 6:
+		case 6://SUB-CAT 3
 			habil = new Habilidad[1];
 			habil[0] = new Habilidad(0,
 					"Gestion de las relaciones con las partes interesadas",
 					"RLMT", "", 4, 7, cargarDetailValorHabil(35));
 			break;
-		case 7:
+		case 7://SUB-CAT 4
 			habil = new Habilidad[7];
 			habil[0] = new Habilidad(0,
 					"Gestion del aprendizaje y el desarrollo", "ETMG", "", 3,
@@ -309,7 +326,8 @@ public class Informacion {
 			habil[6] = new Habilidad(6, "Desarrollo profesional", "PDSV", "",
 					4, 6, cargarDetailValorHabil(42));
 			break;
-		case 8:
+		// CATEGORIA 3
+		case 8://SUB-CAT 1
 			habil = new Habilidad[11];
 			habil[0] = new Habilidad(0, "Gestion del desarrollo de sistemas",
 					"DLMG", "", 5, 7, cargarDetailValorHabil(43));
@@ -335,7 +353,7 @@ public class Informacion {
 			habil[10] = new Habilidad(10, "Realizacion de pruebas", "TEST", "",
 					1, 6, cargarDetailValorHabil(53));
 			break;
-		case 9:
+		case 9://SUB-CAT 2
 			habil = new Habilidad[4];
 			habil[0] = new Habilidad(0,
 					"Analisi de la experiencia del usuario", "UNAN", "", 3, 5,
@@ -348,7 +366,7 @@ public class Informacion {
 			habil[3] = new Habilidad(3, "Integracion de factores humanos",
 					"HFIN", "", 5, 7, cargarDetailValorHabil(57));
 			break;
-		case 10:
+		case 10://SUB-CAT 3
 			habil = new Habilidad[3];
 			habil[0] = new Habilidad(0, "Integracion de sistemas", "SINT", "",
 					2, 6, cargarDetailValorHabil(58));
@@ -357,14 +375,15 @@ public class Informacion {
 			habil[2] = new Habilidad(2, "Instalacin o clausura de sistemas",
 					"HSIN", "", 1, 5, cargarDetailValorHabil(60));
 			break;
-		case 11:
+		// CATEGORIA 4
+		case 11://SUB-CAT 1
 			habil = new Habilidad[2];
 			habil[0] = new Habilidad(0, "Gestion de las TI", "ITMG", "", 5, 7,
 					cargarDetailValorHabil(61));
 			habil[1] = new Habilidad(1, "Gestion financiera de las TI", "FMIT",
 					"", 4, 6, cargarDetailValorHabil(62));
 			break;
-		case 12:
+		case 12://SUB-CAT 2
 			habil = new Habilidad[3];
 			habil[0] = new Habilidad(0, "Gestion de la capacidad", "CPMG", "",
 					4, 6, cargarDetailValorHabil(63));
@@ -373,7 +392,7 @@ public class Informacion {
 			habil[2] = new Habilidad(2, "Gestion del nivel de servicio",
 					"SLMO", "", 2, 7, cargarDetailValorHabil(65));
 			break;
-		case 13:
+		case 13://SUB-CAT 3
 			habil = new Habilidad[5];
 			habil[0] = new Habilidad(0, "Aceptacion del servicio", "SEAC", "",
 					4, 6, cargarDetailValorHabil(66));
@@ -386,7 +405,7 @@ public class Informacion {
 			habil[4] = new Habilidad(4, "Lanzamiento y aplicacion", "RELM", "",
 					3, 6, cargarDetailValorHabil(70));
 			break;
-		case 14:
+		case 14://SUB-CAT 4
 			habil = new Habilidad[11];
 			habil[0] = new Habilidad(0, "Software de sistemas", "SYSP", "", 3,
 					5, cargarDetailValorHabil(71));
@@ -412,7 +431,8 @@ public class Informacion {
 			habil[10] = new Habilidad(10, "Gestion de parques informaticos",
 					"DCMA", "", 3, 6, cargarDetailValorHabil(81));
 			break;
-		case 15:
+		// CATEGORIA 5
+		case 15://SUB-CAT 1
 			habil = new Habilidad[3];
 			habil[0] = new Habilidad(0, "Adquisicion", "PROC", "", 4, 7,
 					cargarDetailValorHabil(88));
@@ -422,7 +442,7 @@ public class Informacion {
 			habil[2] = new Habilidad(2, "Gestion de contratos", "ITCM", "", 5,
 					6, cargarDetailValorHabil(90));
 			break;
-		case 16:
+		case 16://SUB-CAT 2
 			habil = new Habilidad[6];
 			habil[0] = new Habilidad(0, "Gestion de calidad", "QUMG", "", 5, 7,
 					cargarDetailValorHabil(91));
@@ -438,14 +458,15 @@ public class Informacion {
 					4, 7, cargarDetailValorHabil(96));
 
 			break;
-		case 17:
+		// CATEGORIA 6
+		case 17://SUB-CAT 1
 			habil = new Habilidad[2];
 			habil[0] = new Habilidad(0, "Marketing", "MKTG", "", 3, 6,
 					cargarDetailValorHabil(97));
 			habil[1] = new Habilidad(1, "Ventas", "SALE", "", 4, 6,
 					cargarDetailValorHabil(98));
 			break;
-		case 18:
+		case 18://SUB-CAT 2
 			habil = new Habilidad[3];
 			habil[0] = new Habilidad(0, "Gestion de cuentas", "ACMG", "", 5, 6,
 					cargarDetailValorHabil(99));
@@ -464,8 +485,9 @@ public class Informacion {
 	private String[] cargarDetailValorHabil(int id) {
 		String[] detailValHabil = null;
 		switch (id) {
-		//CATEGORIA 1:
-		case 0:// Sub categoria 1
+		// CATEGORIA 1:
+			// Sub categoria 1
+		case 0:
 			detailValHabil = new String[3];
 			detailValHabil[0] = "Revisa sistemas de información para comprobar su cumplimiento con la legislación y especifica cualquier cambio necesario. Es responsable de garantizar el cumplimiento con las políticas y procedimientos organizativos y la estrategia global de gestión de la información.";
 			detailValHabil[1] = "Establece o confirma estructuras de personal para respaldar el trabajo de la plantilla y las correctas relaciones entre la organización y los auditores externos. Asume la responsabilidad de revisar los procesos de gestión (y decisiones) y confirma que cumplan con la estrategia de la organización para la gobernanza corporativa de la información de las TI. Está familiarizado con las normas aplicables y los principios recogidos en ellas. Revisa nuevas propuestas empresariales y ofrece asesoramiento especializado acerca de cuestiones relacionadas con el cumplimiento. Actúa como el contacto de la organización con las autoridades reguladoras pertinentes. Establece políticas y normas para el cumplimiento de la legislación aplicable, adecuadas a los objetivos.";
@@ -513,8 +535,8 @@ public class Informacion {
 			detailValHabil[4] = "Desarrolla normas y procedimientos para respaldar la publicación de contenido. Diseña estructuras globales de información de respaldo. Asume la responsabilidad de las tareas de publicación, incluyendo, por ejemplo, el diseño de la estructura general y el estilo gráfico de sitios web importantes, complejos o destacados. Selecciona las herramientas adecuadas, las plantillas y las normas para la publicación en diversas formas, de acuerdo con las expectativas del cliente (distinguiendo, por ejemplo, entre necesidades tales como la optimización y la facilidad de modificación). Establece normas de diseño y codificación, teniendo en cuenta el ancho de banda y la compatibilidad.";
 			detailValHabil[5] = "Desarrolla estrategias para la entrega de información de respaldo, incluidos los medios de comunicación preferidos, las reglas para el formato del contenido y la estrategia de reprografía, si procede. Garantiza que existan los procedimientos adecuados, normas, instrumentos y recursos para garantizar la calidad correcta del material elaborado por los responsables de publicación de la información dentro de la organización. Asume la responsabilidad de estrategia de publicación, incluyendo, por ejemplo, los marcos de la estructura general de la información y el estilo gráfico de sitios web importantes, complejos o destacados. Dirige la selección de las herramientas, plantillas y normas apropiadas para la publicación en diversas formas, de acuerdo con las expectativas del cliente.";
 			break;
-
-		case 7: // Sub categoria 2
+			 // Sub categoria 2
+		case 7:
 			detailValHabil = new String[3];
 			detailValHabil[0] = "Asume la responsabilidad de la comprensión de los requisitos del cliente, la recopilación de datos, la entrega de análisis y la resolución de problemas. Identifica, evalúa y recomienda opciones, aplicándolas si es necesario. Facilita los grupos de interesados y colabora con ellos, como parte de acuerdos de consultoría formales o informales. Intenta satisfacer por completo las necesidades del cliente, fomentando las capacidades y efectividad del personal encargado de los clientes y garantizando que las soluciones propuestas se comprenden bien y se aprovechan de la forma";
 			detailValHabil[1] = "Gestiona la prestación de servicios de consultoría y la gestión de un equipo de consultores, ofrece asesoramiento y orientación a los consultores o al cliente mediante la participación en la prestación de servicios de consultoría. Se compromete con los clientes y mantiene relaciones con los clientes. Establece acuerdos/contratos y gestión el cumplimiento y el abandono de un compromiso.";
@@ -527,8 +549,9 @@ public class Informacion {
 			detailValHabil[1] = "Mantiene un conocimiento profundo de especialidades técnicas concretas y ofrece asesoramiento experto en cuanto a su aplicación. Puede supervisar el asesoramiento técnico especializado. La especialización puede ser en cualquier aspecto de la tecnología, técnica, método, producto o área de aplicación relacionados con la información y la comunicación.";
 			detailValHabil[2] = "Proporciona liderazgo y directrices organizativas para promover el desarrollo y el aprovechamiento de los conocimientos técnicos en la organización.";
 			break;
-
-		case 9: // Sub categoria 3
+			
+			// Sub categoria 3
+		case 9: 
 			detailValHabil = new String[4];
 			detailValHabil[0] = "Dentro de objetivos de investigación dados, se basa en ellos y sugiere un esquema de ideas apropiado para la investigación, es decir, lleva a cabo la evaluación, desarrollo, demostración y aplicación. Utiliza los recursos disponibles para obtener un conocimiento actualizado de cualquier campo relevante de las TI. Informa sobre los trabajos realizados y puede contribuir a con material con calidad de publicación.";
 			detailValHabil[1] = "Contribuye a los objetivos de investigación, se basa en ellos, y sugiere un esquema de ideas apropiado para la evaluación, desarrollo, demostración y aplicación de la investigación. Utiliza los recursos disponibles para obtener un conocimiento actualizado de cualquier campo relevante de las TI. Informa sobre los trabajos realizados y puede contribuir con material con calidad de publicación. Contribuye a los planes de investigación e identifica oportunidades adecuadas para la publicación y difusión de las conclusiones de la investigación.";
@@ -565,8 +588,9 @@ public class Informacion {
 			detailValHabil[1] = "Ofrece liderazgo y directrices sobre sostenibilidad; conduce al desarrollo de una estrategia de sostenibilidad para las TI, que abarca las fuentes de suministro, el control y la medición del uso interno, la obtención de productos y servicios eficientes en materia de recursos, y factores legislativos.";
 
 			break;
-
-		case 15: // Sub categoria 4
+			
+			// Sub categoria 4
+		case 15: 
 			detailValHabil = new String[3];
 			detailValHabil[0] = "Mantiene el conocimiento de oportunidades ofrecidas por las nuevas tecnologías para abordar desafíos o permitir nuevas formas de trabajo. Dentro de su propia esfera de influencia, trabaja para conseguir más objetivos para la organización, mediante el uso de productos y tecnologías emergentes. Contribuye a las reuniones y presentaciones sobre su relevancia y valor potencial para la organización.";
 			detailValHabil[1] = "Supervisa el mercado para adquirir conocimientos y comprensión sobre las tecnologías emergentes actuales. Identifica tecnologías nuevas y emergentes, como hardware, software y productos en función de su propio campo de especialización, evalúa su relevancia y su valor potencial para la organización y contribuye a reuniones de información del personal y el departamento de administración.";
@@ -610,13 +634,123 @@ public class Informacion {
 			detailValHabil[1] = "Fomenta y garantiza el uso de técnicas, metodologías y herramientas adecuadas.";
 			detailValHabil[2] = "6 Establece la dirección y dirige la introducción y el uso de técnicas, metodologías y herramientas, que coincidan con los requisitos empresariales generales (tanto actuales como futuros), garantizando así la uniformidad en todos los grupos de usuarios.";
 			break;
-			
-		//CATEGORIA 1:
-		case 23://Sub Categoria 1
+
+		// CATEGORIA 2:
+			// Sub Categoria 1
+		case 23://Hab 1
 			detailValHabil = new String[3];
+			detailValHabil[0] ="Garantiza que el programa y el proyecto se mantengan fieles al enfoque de gestión de cartera y a los plazos acordados, y que proporcionen información adecuada para los objetivos acordados de plazos y precisión. Elabora informes según sea necesario para la gobernanza de la cartera, incluyendo la realización de recomendaciones para realizar cambios en la cartera.";
+			detailValHabil[1] ="Dirige la definición de una cartera de cambio y la hoja de ruta de la cartera. Obtiene compromisos e influye en responsables de gestión de alto nivel para garantizar que la cartera produzca los objetivos empresariales acordados. Planifica, supervisa y elabora informes sobre actividades relacionadas con la cartera para garantizar que cada parte de la cartera contribuye al logro global de la cartera. Identifica problemas con la estructura de la cartera, el coste, el riesgo, las interdependencias, el impacto en las actividades empresariales actuales y los beneficios empresariales que deben obtenerse. Notifica proyectos/programas/iniciativas de cambio sobre cuestiones y recomendaciones y supervisa que la acción sea correcta. Informa sobre el estado de la cartera según sea apropiado.";
+			detailValHabil[2] ="Dirige la definición, aplicación y revisión del marco de gestión de la cartera de la organización. Autoriza la estructura de carteras y es responsable de la consonancia con la estrategia y los objetivos empresariales. Toma decisiones sobre la priorización de recursos y los cambios que deben aplicarse. Recomienda y aplica medidas correctivas obteniendo compromisos e influyendo en la gestión de más alto nivel. Conduce la supervisión y revisión continuada de la cartera para observar los costes, riesgos, interdependencias, el impacto en las actividades empresariales actuales y las ventajas estratégicas que deben obtenerse. Es responsable de la aplicación de disposiciones de gobernanza efectivas sobre la cartera respaldadas por una elaboración eficaz de informes.";
 			break;
-		case 24:
-			detailValHabil = new String[3];
+		case 24://Hab 2
+			detailValHabil = new String[2];
+			detailValHabil[0] ="Establece una estrategia organizativa concerniente a la dirección y realización de la gestión de programas, incluyendo la aplicación de metodologías adecuadas. Planifica, dirige y coordina actividades para gestionar y aplicar programas complejos desde el inicio del contrato/propuesta hasta la fase operativa final. Armoniza los objetivos del programa con los objetivos empresariales y autoriza la selección y planificación de todos los proyectos y actividades relacionados. Planifica, programa e informa sobre actividades relacionadas con el programa, garantizando que haya acuerdos de gobernanza apropiados y efectivos, respaldados por informes exhaustivos.";
+			detailValHabil[1] ="Planifica, dirige y coordina actividades para gestionar y aplicar un programa desde el inicio del contrato/propuesta hasta la fase operativa final; planifica, programa, supervisa e informa sobre actividades relacionadas con el programa. Garantiza que los programas se gestionan para obtener beneficios empresariales y que la gestión del programa sea reciba información mediante una toma de conciencia de los desarrollos técnicos actuales.";
+			break;
+		case 25://Hab 3
+			detailValHabil = new String[4];
+			detailValHabil[0] ="Define, documenta y lleva a cabo proyectos de menor envergadura (normalmente inferiores a seis meses, con un presupuesto limitado, sin interdependencia con otros proyectos y sin impacto estratégico significativo), solo o con un equipo pequeño, participando activamente en todas las fases. Identifica, evalúa y gestiona los riesgos para lograr el éxito del proyecto. Prepara planes realistas (incluyendo planes de calidad, riesgo y comunicaciones), y supervisa las actividades en relación a la programación del proyecto, proporcionando informes regulares y precisos para los interesados según sea necesario. Supervisa los costos, plazos y recursos utilizados y toma medidas cuando estos se apartan de los términos acordados. Garantiza que los proyectos propios se cierren oficialmente y, cuando sea pertinente, se revisen posteriormente, y que se registren las lecciones aprendidas.";
+			detailValHabil[1] ="Asume plena responsabilidad en la definición, documentación y finalización satisfactoria de los proyectos de mediana escala (normalmente proyectos que duran de 6 a 12 meses, con impacto directo en las empresas, equipos de 3 a 5 y plazos fijos). Identifica, evalúa y gestiona los riesgos para el éxito del proyecto. Garantiza que se preparen y mantengan proyectos y planes de calidad realistas, y proporciona informes precisos y regulares a los interesados según sea necesario. Garantiza que se realicen controles de calidad dentro de los plazos programados y de acuerdo con los procedimientos. Gestiona el procedimiento de control de cambio y asegura que se completen las entregas de proyectos dentro de los costos, plazos y presupuestos de recursos planificados, y que además se aprueben. Ofrece liderazgo eficaz para el equipo del proyecto y adopta medidas apropiadas cuando el rendimiento del desvía de los términos acordados.";
+			detailValHabil[2] ="Asume plena responsabilidad en la definición, documentación y finalización satisfactoria de proyectos complejos (por lo general, superiores a 12 meses, con un impacto empresarial, político o de alto nivel y dependencias de alto riesgo), garantizando que se mantengan procesos de gestión de riesgos, proyectos, calidad y control de cambios realistas. Supervisa y controla recursos, ingresos y costos del capital en relación al presupuesto del proyecto, y gestiona las expectativas de todas las partes interesadas en el proyecto.";
+			detailValHabil[3] ="Establece la estrategia organizativa que rige la dirección y el modo de proceder de la gestión del proyecto, incluyendo la aplicación de metodologías apropiadas. Autoriza la gestión de proyectos a gran escala. Lidera la planificación de proyectos, la programación, el control y la realización de informes sobre actividades para llevar a cabo proyectos estratégicos y de alto impacto y riesgo. Gestiona el riesgo y asegura que se apliquen soluciones a problemas que se han presentado conforme a los procesos de control de cambio.";
+			break;
+		case 26://Hab 4
+			detailValHabil = new String[4];
+			detailValHabil[0] ="Colabora en la recopilación de informes de gestión del proyecto. Mantiene los archivos de proyectos y programas a partir de datos facilitados actuales y previstos.";
+			detailValHabil[1] ="Utiliza soluciones recomendadas de control de proyectos para proyectos de planificación, programación y seguimiento. Crea los archivos de proyecto, recopila y distribuye informes. Proporciona servicios administrativos a las juntas del proyecto, a los equipos de garantía del proyecto y a las reuniones de control de calidad. Proporciona indicaciones relacionadas con el software, los procedimientos, los procesos, los instrumentos y las técnicas de gestión del proyecto.";
+			detailValHabil[2] ="Asume la responsabilidad de la prestación de servicios de apoyo al proyecto en proyectos de pequeña/mediana escala. Utiliza y recomienda soluciones de control de proyecto para la planificación, programación y el seguimiento de proyectos. Establece y proporciona indicaciones detalladas en materia de software de gestión, procedimientos, procesos, instrumentos y técnicas de proyecto. Apoya a las juntas de control de proyectos o programas, a los equipos de garantía del proyecto y a las reuniones de control de calidad. Proporciona las indicaciones básicas en las propuestas de proyectos individuales. Puede estar involucrado en algunos aspectos de apoyo de un programa, proporcionando una visión global sobre la gestión del riesgo, el cambio, la calidad, las finanzas o la configuración.";
+			detailValHabil[3] ="Asume la responsabilidad de la prestación de servicios de la oficina de carteras, programas y proyectos, tanto en proyectos grandes como en varios proyectos dentro de una organización. Asesora sobre las normas disponibles, los procedimientos, los métodos, los instrumentos y las técnicas. Evalúa el rendimiento del proyecto y el programa y recomienda cambios de ser necesarios. Contribuye en las revisiones y auditorías de la gestión del proyecto y el programa para garantizar el cumplimiento de las normas.";
+			break;
+			//SUB-CATEGORIA 2
+		case 27://Hab 1
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 28://Hab 2
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 29://Hab 3
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 30://Hab 4
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 31://Hab 5
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 32://Hab 6
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 33://Hab 7
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 34://Hab 8
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+			//SUB-CATEGORIA 3
+		case 35://Hab 1
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+			//SUB-CATEGORIA 4
+		case 36://Hab 1
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 37://Hab 2
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 38://Hab 3
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 39://Hab 4
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 40://Hab 5
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 41://Hab 6
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		case 42://Hab 7
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
+			break;
+		//CATEGORIA 3
+			//SUB-CATEGORIA 1
+		case 43:
+			detailValHabil = new String[2];
+			detailValHabil[0] ="";
+			detailValHabil[1] ="";
 			break;
 		default:
 			detailValHabil = new String[3];

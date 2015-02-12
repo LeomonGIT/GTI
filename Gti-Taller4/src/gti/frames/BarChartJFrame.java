@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 
 public class BarChartJFrame extends JFrame {
 	JFXPanel fxPanel;
-	private JPanel btnPanel;
+	private JPanel btnPanel,panelLeyenda,panelPie;
 	private TodoCategoria todo = null;
 	private static int idSubca, idCategoria;
 	static BarChartJFrame myFrame;
@@ -32,6 +32,8 @@ public class BarChartJFrame extends JFrame {
 
 	private void initSwingComponents() {
 		btnPanel = new JPanel();
+		panelLeyenda = new JPanel();
+		panelPie =new JPanel();
 		todo = TodoCategoria.getInstancia();
 		String titulo = todo.getCategoria().get(idCategoria).getSubcategoria()[idSubca].getNombreSub();
 		JPanel mainPanel = new JPanel(new BorderLayout());
@@ -98,8 +100,29 @@ public class BarChartJFrame extends JFrame {
 				myFrame.dispose();
 			}
 		});
-		myFrame.add(btnPanel, BorderLayout.SOUTH);
+		JLabel titleLabel1 = new JLabel("1: follow");
+		JLabel titleLabel2 = new JLabel("2: Ayudar");
+		JLabel titleLabel3 = new JLabel("3: Aplicar");
+		JLabel titleLabel4 = new JLabel("4: Permitir");
+		JLabel titleLabel5 = new JLabel("5: Garantizar / Aconsejar");
+		JLabel titleLabel6 = new JLabel("6: Iniciar / Influir");
+		JLabel titleLabel7 = new JLabel("7: establecer la estrategia, inspirar, movilizar");
+		panelPie.setLayout(new BoxLayout(panelPie, BoxLayout.Y_AXIS));
+		panelLeyenda.add(titleLabel1);
+		panelLeyenda.add(titleLabel2);
+		panelLeyenda.add(titleLabel3);
+		panelLeyenda.add(titleLabel4);
+		panelLeyenda.add(titleLabel5);
+		panelLeyenda.add(titleLabel6);
+		panelLeyenda.add(titleLabel7);
 		btnPanel.add(btnSubCompletar);
+		panelPie.add(panelLeyenda);
+		panelPie.add(btnPanel);
+		
+		
+		myFrame.add(panelPie, BorderLayout.PAGE_END);		
+		//myFrame.add(btnPanel, BorderLayout.SOUTH);
+		
 	}
 
 	private XYChart.Data getData(double x, double y) {
